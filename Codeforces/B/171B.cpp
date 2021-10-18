@@ -6,22 +6,15 @@ typedef pair<int , int> pi;
 
 void solve()
 {
-    int n;
-    cin >> n;
-    ll sum = 0;
-    vi a(n);
-    for(int i = 0; i < n; i++)
+    ll a;
+    cin >> a;
+    ll sum = 1 , b = 12;
+    for(int i = 0; i < a - 1; i++)
     {
-        cin >> a[i];
-        sum += a[i];
+        sum += b;
+        b += 12;
     }
-    if(sum % n == 0)
-    {
-        cout<<n;
-    }
-    else{
-        cout<<n - 1;
-    }
+    cout<<sum;
 }
 
 int main()

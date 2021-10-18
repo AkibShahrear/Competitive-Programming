@@ -6,29 +6,22 @@ typedef pair<int , int> pi;
 
 void solve()
 {
-    int n;
-    cin >> n;
-    ll sum = 0;
-    vi a(n);
-    for(int i = 0; i < n; i++)
+    int w , h;
+    cin >> w >> h;
+    ll ans = 0;
+    for(int i = 1; i < w; i++)
     {
-        cin >> a[i];
-        sum += a[i];
+        for(int j = 1; j < h; j++)
+        {
+            ans += min(i , w - i) * min(j , h - j);
+        }
     }
-    if(sum % n == 0)
-    {
-        cout<<n;
-    }
-    else{
-        cout<<n - 1;
-    }
+    cout<<ans<<endl;
 }
 
 int main()
 {
     ios::sync_with_stdio(0);cin.tie(0);
-
     solve();
-
     return 0;
 }
